@@ -47,5 +47,35 @@ void func3(Base& obj) {
 }
 
 int main() {
+	Base* b1 = new Base();
+	Desc* d1 = new Desc();
+	func1(*b1);
+	func2(b1);
+	func3(*b1);
+	func1(*d1);
+	func2(d1);
+	func3(*d1);
+	printf("\n\n");
+
+	Base b2 = new Base(b1);
+	Desc d2 = new Desc(d1);
+	func1(b2);
+	func2(&b2);
+	func3(b2);
+	func1(d2);
+	func2(&d2);
+	func3(d2);
+	printf("\n\n");
+
+	Base* b3 = new Base(b2);
+	Desc* d3 = new Desc(d2);
+	func1(b3);
+	func2(b3);
+	func3(*b3);
+	func1(d3);
+	func2(d3);
+	func3(*d3);
+
+
 	return 0;
 }
